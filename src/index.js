@@ -12,6 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(logger);
 
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'Fitness Challenge API' });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/challenges', challengeRoutes);
 
